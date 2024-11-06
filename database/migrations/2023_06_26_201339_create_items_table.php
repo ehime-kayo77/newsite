@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->string('name', 100)->index();
-            $table->string('type', 100)->nullable();
-            $table->string('detail', 500)->nullable();
+            $table->bigInteger('user_id');
+            $table->string('name', 100);
+            $table->tinyInteger('type');
+            $table->enum('season', ['春', '夏', '秋', '冬' , 'その他']);
+            $table->unsignedInteger('duration_in_minutes'); 
+            $table->unsignedInteger('cost_per_meal');           
+            $table->string('detail', 500);
             $table->timestamps();
         });
     }

@@ -15,8 +15,41 @@ class Item extends Model
         'user_id',
         'name',
         'type',
+        'season',
+        'duration_in_minutes',
+        'cost_per_meal',
         'detail',
     ];
+
+    /**
+     * 商品一覧の項目データの取得
+     */
+    public static function Item()
+    {
+        return $this->belongsTo(Item::class);
+    }
+
+    /**
+     * 商品のタイプを取得する
+     */
+
+    public function getTypeNameAttribute()
+    {
+        switch ($this->type) {
+            case 1:
+                return '主菜';
+            case 2:
+                return '副菜';
+            case 3:
+                return '汁物';
+            case 4:
+                return 'めん類';
+            case 5:
+                return 'スイーツ';
+            case 6:
+                return 'その他';
+        }
+    }
 
     /**
      * The attributes that should be hidden for serialization.
