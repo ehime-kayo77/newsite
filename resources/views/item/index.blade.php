@@ -22,14 +22,14 @@
                                 <form action="{{ url('items') }}" method="post" class="d-flex align-items-center" >
                                     @csrf
                                     <div class="mr-3">
-                                        <select class="form-select" aria-label="Default select example" name="type" style="width: 200px;">
+                                        <select class="form-control" aria-label="Default select example" name="type" style="width: 200px;">
                                             <option>カテゴリーを選択</option>
                                             <option value="1" @if( $type == '1') selected @endif >主菜</option>
                                             <option value="2" @if( $type == '2') selected @endif >副菜</option>
                                             <option value="3" @if( $type == '3') selected @endif >汁物</option>
                                             <option value="4" @if( $type == '4') selected @endif >めん類</option>
                                             <option value="5" @if( $type == '5') selected @endif >スイーツ</option>
-                                            <option value="5" @if( $type == '6') selected @endif >その他</option>
+                                            <option value="6" @if( $type == '6') selected @endif >その他</option>
                                         </select> 
                                     </div>
                                     <div class="mr-3">             
@@ -51,13 +51,14 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>名前</th>
+                                <th>レシピ名</th>
                                 <th>カテゴリー</th>
                                 <th>おすすめの季節</th>
                                 <th>調理時間（分）</th>
                                 <th>費用（１人分）</th>
                                 <th>詳細</th>
-                                <th>編集・削除</th>
+                                <th>編集</th>
+                                <th>削除</th>
                                 <th>更新日</th>                            
                             </tr>
                         </thead>
@@ -83,9 +84,17 @@
                                     </td>
                                     <td>{{ $item->season }}</td>
                                     <td>{{ $item->duration_in_minutes }}</td>
-                                    <td>{{ $item->cost_per_meal }}</td>
+                                    <td>{{ '￥' . number_format ($item->cost_per_meal) }}</td>
                                     <td><a href="/items/detail/{{$item->id}}" class="btn btn-primary" target="_blank" >詳細</a></td>
                                     <td><a href="/items/edit/{{$item->id}}" class="btn btn-primary" target="_blank" >編集</a></td>
+                                    <td>
+                                        <form action="{{ url('items/delete') }}" method="post"
+                                            onsubmit="return confirm('削除します。よろしいですか？');">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $item->id }}">
+                                            <input type="submit" value="削除" class="btn btn-danger">
+                                        </form>
+                                    </td>
                                     <td>{{$item->updated_at->format('Y-m-d')}}</td>
                                 </tr>
                             @endforeach

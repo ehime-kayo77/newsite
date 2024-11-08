@@ -83,6 +83,16 @@ class ItemController extends Controller
                 'detail' => $request->detail,
             ]);
 
+           /*  // アップロードされたファイルを取得
+                $image = $request->file('image');
+
+                // storage/app/public/images に画像を保存
+                $path = $image->store('images', 'public');
+
+                // 保存された画像のパスを返す
+                return $path; */
+
+
             return redirect('/items');
         }
 
@@ -92,25 +102,59 @@ class ItemController extends Controller
     /**
      * レシピ編集・削除
      */
-    public function edit($id)
+    public function edit(Request $request , $id)
     {
 
         //idに該当するデータを取得
-        $items = Item::find($id);
+        $item = Item::find($request->id);
 
         //ビューを返す
-        return view('item.edit', compact('items'));
+        return view('item.edit', compact('item'));
     }
+
+     /**
+        * 編集したデータを登録
+        */
+
+    public function update(Request $request,$id)
+    {
+        // アイテムの更新
+        $item = new Item();
+        $item = Item::findOrFail($id);
+        //$price=str_replace(['￥',','],'',$request->cost_per_meal);
+
+        // アイテムの更新
+        $item->update([
+            'name'=>$request->name,
+            'type'=>$request->type,
+            'season'=>$request->season,
+            'duration_in_minutes'=>$request->duration_in_minutes,
+            'cost_per_meal'=>$request->cost_per_meal,
+            'detail'=>$request->detail,
+        ]);
+
+        // リダイレクト
+        return view('item.edit', compact('item'));
+    }
+
+    // データを削除
+    public function delete(Request $request)
+    {
+        $item = Item::find($request->id);
+        $item->delete();
+
+        return redirect('/items');
+    }
+
 
     /**
      * レシピ詳細表示
      */
     public function detail($id)
     {
-        //idに該当するデータを取得
-        $items = Item::find($id);
-
-        //ビューを返す
-        return view('item.detail', compact('items'));
+        $item = Item::find($id);
+        return view('item.detail', [
+            'item' => $item,
+        ]);
     }
 }
