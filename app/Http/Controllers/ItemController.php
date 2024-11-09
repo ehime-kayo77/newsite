@@ -28,29 +28,19 @@ class ItemController extends Controller
          // カテゴリーを取得
         $type = $request->input('type');
 
-         // キーワードとカテゴリーが空かどうかをチェック
-        if (empty($keyword) && empty($type)){
-            // キーワードとカテゴリーがない場合は全てのアイテムを新しい順に取得   
-            $items = item::orderBy('updated_at', 'desc')->paginate(10);
-            
-            // キーワードのみがある場合は、そのキーワードで検索
-            } else if(!empty($keyword) && empty($type)){
-            $items = Item::where('name', 'LIKE', "%{$keyword}%")
-                ->orwhere('type','LIKE', "%{$keyword}%")
-                ->orderBy('updated_at', 'desc')->paginate(10);
-
-            // キーワードとカテゴリー両方がある場合は、そのキーワードで検索
-            } else if (!empty($keyword) && !empty($type)) {
-            $items = Item::where('name', 'LIKE', "%{$keyword}%")
-                ->orwhere('type','LIKE', "%{$keyword}%")
-                ->where('type', $type)
-                ->orderBy('updated_at', 'desc')->paginate(10);
-
-            // カテゴリーのみがある場合は、そのカテゴリーで検索
-            } else {
-            $items = Item::where('type', $type)
-                ->orderBy('updated_at', 'desc')->paginate(10);
-            }
+         // 季節ーを取得
+         $season = $request->input('season');
+       
+         $items = Item::when($keyword, function($query, $keyword) { 
+                return $query->where('name' ,'LIKE', "%{$keyword}%"); 
+                })
+            ->when($type, function($query, $type) { 
+                return $query->where('type' , $type); 
+                })
+            ->when($season, function($query, $season) { 
+                return $query->where('season' , $season); 
+                })
+            ->orderBy('updated_at', 'desc')->paginate(10);
 
             // 検索結果をビューに渡す
             return view('item.index', [
@@ -58,7 +48,7 @@ class ItemController extends Controller
                 'keyword' => $keyword,
                 'type'=> $type
         ]);
-    }     
+    }
 
     /**
      * レシピ登録
@@ -131,9 +121,10 @@ class ItemController extends Controller
             'duration_in_minutes'=>$request->duration_in_minutes,
             'cost_per_meal'=>$request->cost_per_meal,
             'detail'=>$request->detail,
+            'link'=>$request->link,
         ]);
 
-        // リダイレクト
+        //ビューを返す
         return view('item.edit', compact('item'));
     }
 
@@ -153,6 +144,8 @@ class ItemController extends Controller
     public function detail($id)
     {
         $item = Item::find($id);
+
+        //ビューを返す
         return view('item.detail', [
             'item' => $item,
         ]);

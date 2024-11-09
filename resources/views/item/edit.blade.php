@@ -62,6 +62,11 @@
                             <label for="detail">詳細</label>
                             <input type="text" class="form-control" name="detail" value="{{ $item-> detail }}" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="detail">movie</label>
+                            <input type="text" class="form-control" id="link" name="link" placeholder="movie">
+                        </div>
                     </div>
                     <!--  編集ボタン -->
                     <div class="card-footer">

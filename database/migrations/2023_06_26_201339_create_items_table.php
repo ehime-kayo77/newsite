@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('name', 100);
             $table->tinyInteger('type');
             $table->enum('season', ['春', '夏', '秋', '冬' , 'その他']);
-            $table->unsignedInteger('duration_in_minutes'); 
-            $table->unsignedInteger('cost_per_meal');           
+            $table->unsignedInteger('duration_in_minutes')->nullable(); 
+            $table->unsignedInteger('cost_per_meal')->nullable();           
             $table->string('detail', 500);
+            $table->string('link', 500)->nullable();
             $table->timestamps();
         });
     }

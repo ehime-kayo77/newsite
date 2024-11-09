@@ -67,6 +67,11 @@
                             <label for="detail">詳細</label>
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
+
+                        <div class="form-group">
+                            <label for="detail">movie</label>
+                            <input type="text" class="form-control" id="link" name="link" placeholder="movie">
+                        </div>
                     </div>
 
                     <div class="card-footer">

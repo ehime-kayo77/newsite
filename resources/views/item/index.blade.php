@@ -23,7 +23,7 @@
                                     @csrf
                                     <div class="mr-3">
                                         <select class="form-control" aria-label="Default select example" name="type" style="width: 200px;">
-                                            <option>カテゴリーを選択</option>
+                                            <option value="">カテゴリーを選択</option>
                                             <option value="1" @if( $type == '1') selected @endif >主菜</option>
                                             <option value="2" @if( $type == '2') selected @endif >副菜</option>
                                             <option value="3" @if( $type == '3') selected @endif >汁物</option>
@@ -103,8 +103,17 @@
                 </div>
             </div>
         </div>
+        <!-- フッターここから -->
+        <footer>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-end">
+            {{ $items->links('vendor.pagination.bootstrap-4') }}
+            </ul>
+        </nav>
+        </footer> 
     </div>
 @stop
+
 
 @section('css')
 @stop

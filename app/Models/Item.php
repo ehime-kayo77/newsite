@@ -19,6 +19,7 @@ class Item extends Model
         'duration_in_minutes',
         'cost_per_meal',
         'detail',
+        'link',
     ];
 
     /**
@@ -27,28 +28,6 @@ class Item extends Model
     public static function Item()
     {
         return $this->belongsTo(Item::class);
-    }
-
-    /**
-     * 商品のタイプを取得する
-     */
-
-    public function getTypeNameAttribute()
-    {
-        switch ($this->type) {
-            case 1:
-                return '主菜';
-            case 2:
-                return '副菜';
-            case 3:
-                return '汁物';
-            case 4:
-                return 'めん類';
-            case 5:
-                return 'スイーツ';
-            case 6:
-                return 'その他';
-        }
     }
 
     /**
