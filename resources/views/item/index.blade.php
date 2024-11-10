@@ -102,19 +102,17 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <!-- フッターここから -->
-        <footer>
+        </div> 
+    </div>
+    <!-- フッターここから -->
+    <footer>
         <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-end">
+            <div class="pagination justify-content-end">
             {{ $items->links('vendor.pagination.bootstrap-4') }}
-            </ul>
+            </div>
         </nav>
         </footer> 
-    </div>
 @stop
-
-
 @section('css')
 @stop
 

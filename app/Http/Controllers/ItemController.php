@@ -60,6 +60,9 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
+                'type' => 'nullable|integer',
+                'season' => 'nullable|integer',
+                'detail' => 'required|max:500',
             ]);
 
             // レシピ登録
@@ -72,16 +75,6 @@ class ItemController extends Controller
                 'cost_per_meal' => $request->cost_per_meal,
                 'detail' => $request->detail,
             ]);
-
-           /*  // アップロードされたファイルを取得
-                $image = $request->file('image');
-
-                // storage/app/public/images に画像を保存
-                $path = $image->store('images', 'public');
-
-                // 保存された画像のパスを返す
-                return $path; */
-
 
             return redirect('/items');
         }
@@ -108,8 +101,8 @@ class ItemController extends Controller
 
     public function update(Request $request,$id)
     {
+
         // アイテムの更新
-        $item = new Item();
         $item = Item::findOrFail($id);
         //$price=str_replace(['￥',','],'',$request->cost_per_meal);
 

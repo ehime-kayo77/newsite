@@ -40,22 +40,37 @@
 
                         <div class="form-group">
                             <label for="type">カテゴリー</label>
-                            <input type="text" class="form-control" name="type" value="{{ $item-> type }}" required>
+                                <select class="form-control" aria-label="Default select example" name="type" placeholder="種別" required>
+                                        <option value="">カテゴリーを選択</option>
+                                        <option value="1">主菜</option>
+                                        <option value="2">副菜</option>
+                                        <option value="3">汁物</option>
+                                        <option value="4">めん類</option>
+                                        <option value="5">スイーツ</option>
+                                        <option value="6">その他</option>
+                                </select> 
                         </div>
 
                         <div class="form-group">
                             <label for="type">おすすめの季節</label>
-                            <input type="text" class="form-control" name="season" value="{{ $item-> season }}" required>
+                                <select class="form-control" aria-label="Default select example" name="season" required>
+                                        <option value="">カテゴリーを選択</option>
+                                        <option value="1">春</option>
+                                        <option value="2">夏</option>
+                                        <option value="3">秋</option>
+                                        <option value="4">冬</option>
+                                        <option value="5">その他</option>
+                                </select> 
                         </div>
 
                         <div class="form-group">
                             <label for="type">調理時間（分）</label>
-                            <input type="text" class="form-control" name="duration_in_minutes" value="{{ $item->duration_in_minutes }}" required>
+                            <input type="text" class="form-control" name="duration_in_minutes" value="{{ $item->duration_in_minutes }}">
                         </div>
 
                         <div class="form-group">
                             <label for="type">費用（1人分）</label>
-                            <input type="text" class="form-control" name="cost_per_meal" value="{{ $item-> cost_per_meal }}" required>
+                            <input type="text" class="form-control" name="cost_per_meal" value="{{ $item-> cost_per_meal }}">
                         </div>
 
                         <div class="form-group">

@@ -25,13 +25,13 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">レシピ名</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="名前" required>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="名前" required>
                         </div>
 
                         <div class="form-group">
                             <label for="type">カテゴリー</label>
                                 <select class="form-control" aria-label="Default select example" name="type" placeholder="種別" required>
-                                    <option>カテゴリーを選択</option>
+                                    <option value="">カテゴリーを選択</option>
                                     <option value="1">主菜</option>
                                     <option value="2">副菜</option>
                                     <option value="3">汁物</option>
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label for="type">おすすめの季節</label>
                                 <select class="form-control" aria-label="Default select example" name="season" required>
-                                    <option>カテゴリーを選択</option>
+                                    <option value="">カテゴリーを選択</option>
                                     <option value="1">春</option>
                                     <option value="2">夏</option>
                                     <option value="3">秋</option>
@@ -65,12 +65,12 @@
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <input type="text" class="form-control" id="detail" name="detail" value="{{ old('name') }}" placeholder="詳細説明" required>
                         </div>
 
                         <div class="form-group">
                             <label for="detail">movie</label>
-                            <input type="text" class="form-control" id="link" name="link" placeholder="movie">
+                            <input type="text" class="form-control" id="link" name="link" value="{{ old('name') }}" placeholder="作り方動画">
                         </div>
                     </div>
 
