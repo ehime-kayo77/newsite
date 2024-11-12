@@ -74,6 +74,7 @@ class ItemController extends Controller
                 'duration_in_minutes' => $request->duration_in_minutes,
                 'cost_per_meal' => $request->cost_per_meal,
                 'detail' => $request->detail,
+                'link'=>$request->link,
             ]);
 
             return redirect('/items');
