@@ -7,11 +7,9 @@
 @stop
 
 @section('content')
-    <p></p>
-    <div class="container text-center">
-        <div class="row justify-content-between">
-            <div class="col m-3">
-                <div class="card" style="width: 28rem;">
+    <div class="container-fluid">
+        <div class="row">
+                <div class="card col-3 m-3">
                     <img src="{{ asset('kayoimages/spring.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">春のレシピ－Spring Recipes</h5>
@@ -23,10 +21,8 @@
                         </form>
                     </div>
                 </div>
-            </div>
-
-            <div class="col m-3">
-                <div class="card" style="width: 28rem;">
+                
+                <div class="card col-3 m-3">
                     <img src="{{ asset('kayoimages/summer.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">夏のレシピ－Summer Recipes</h5>
@@ -38,10 +34,11 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        
-            <div class="col m-3">
-                <div class="card" style="width: 28rem;">
+                
+            <div class="w-100"></div>
+
+
+                <div class="card  col-3 m-3" >
                     <img src="{{ asset('kayoimages/autumn.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">秋のレシピ－Autumn Recipes</h5>
@@ -53,10 +50,10 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            
 
-            <div class="col m-3">
-                <div class="card" style="width: 28rem;">
+            
+                <div class="card col-3 m-3">
                     <img src="{{ asset('kayoimages/winter.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">冬のレシピ－winter Recipes</h5>
@@ -69,8 +66,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>  
+    </div>
 @stop
 
 @section('css')
