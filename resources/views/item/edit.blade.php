@@ -80,7 +80,7 @@
 
                         <div class="form-group">
                             <label for="detail">movie</label>
-                            <input type="text" class="form-control" id="link" name="link" placeholder="movie">
+                            <input type="text" class="form-control" id="link" name="link" value="{{ $item-> link }}" placeholder="作り方動画">
                         </div>
                     </div>
                     <!--  編集ボタン -->
