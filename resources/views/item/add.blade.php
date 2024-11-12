@@ -70,7 +70,7 @@
 
                         <div class="form-group">
                             <label for="detail">movie</label>
-                            <input type="text" class="form-control" id="link" name="link" value="{{ old('name') }}" placeholder="作り方動画">
+                            <input type="text" class="form-control" id="link" name="link" placeholder="作り方動画">
                         </div>
                     </div>
 
