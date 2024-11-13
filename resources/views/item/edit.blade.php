@@ -18,7 +18,7 @@
                     </ul>
                 </div>
             @endif
-            <div class="row ml-2 ">
+            <div class="row ml-2">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ url('login') }}">Home</a></li>
