@@ -7,13 +7,14 @@
 @stop
 
 @section('content')
+<div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header mt-2">
                     <div class="input-group input-group-sm">
                         <!-- ぱんくずリスト -->
-                        <div class="row ms-3">
+                        <div>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ url('login') }}">Home</a></li>
@@ -60,6 +61,7 @@
             </div>
         </div>
     </div>
+</div>
 @stop
 
 @section('css')
