@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
+                            <label for="detail">レシピ材料</label>
                             <input type="text" class="form-control" name="detail" value="{{ $item-> detail }}" required>
                         </div>
 

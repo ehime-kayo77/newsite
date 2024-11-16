@@ -64,8 +64,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" value="{{ old('name') }}" placeholder="詳細説明" required>
+                            <label for="detail">レシピ材料</label>
+                            <input type="text" class="form-control" id="detail" name="detail" value="{{ old('name') }}" placeholder="レシピ材料" required>
                         </div>
 
                         <div class="form-group">

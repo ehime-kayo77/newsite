@@ -49,7 +49,7 @@
                             <li class="list-group-item brand">おすすめの季節：{{$item->season}}</li>
                             <li class="list-group-item brand">調理時間（分）：{{$item->duration_in_minutes}}</li>
                             <li class="list-group-item price">費用（１人分）：￥{{ number_format($item->cost_per_meal) }}</li>
-                            <li class="list-group-item detail">レシピ説明：{!! nl2br(e($item->detail)) !!}</li>
+                            <li class="list-group-item detail">レシピ材料：{!! nl2br(e($item->detail)) !!}</li>
                         </ul>
                     <!-- 登録日時・更新日時 -->
                         <div class="created_at mt-3">登録日{{$item->created_at->format('Y-m-d')}}</div>
