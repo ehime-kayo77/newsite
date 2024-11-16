@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<!-- <div class="container-fluid"> -->
+<div class="container-fluid">
     <div class="row">
         <div class="card col-md-12">
             <div class="card-header">
@@ -101,7 +101,7 @@
             </div>
         </div>     
     </div>
-<!-- </div> -->
+</div>
     <!-- フッターここから -->
     <footer>
         <nav aria-label="Page navigation">
