@@ -10,16 +10,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="card col-md-12">
-            <div class="card-header d-flex align-items-center justify-content-between">       
-                <div class="mr-3">
+            <div class="card-header d-flex flex-wrap align-items-center justify-content-between">       
+                <div class="m-2">
                     <a class="btn btn-outline-primary" href="{{ url('items') }}" role="button">一覧表示</a>
                 </div>
 
                 <!-- 検索バー -->    
-                <form action="{{ url('items') }}" method="post" class="d-flex align-items-center flex-grow-1">
+                <form action="{{ url('items') }}" method="post" class="d-flex flex-wrap align-items-center flex-grow-1">
                     @csrf
-                    <div class="mr-3">
-                        <select class="form-control" aria-label="Default select example" name="type" style="width: 200px;">
+                    <div class="flex: 1; m-2">
+                        <select class="form-control" aria-label="Default select example" name="type">
                             <option value="">カテゴリーを選択</option>
                             <option value="1" @if( $type == '1') selected @endif >主菜</option>
                             <option value="2" @if( $type == '2') selected @endif >副菜</option>
@@ -30,18 +30,18 @@
                         </select> 
                     </div>
 
-                    <div class="mr-3">             
+                    <div class="flex: 2; m-2">             
                         <input type="search" class="form-control" name="keyword" value="{{ $keyword }}" placeholder="検索キーワードを入力">
                     </div>
 
-                    <div>
+                    <div class="search-btn">
                         <button type="submit" class="btn btn-primary mr-3">検索</button>
                     </div>
                 </form>
 
                 <!-- レシピ登録ボタン --> 
-                <div>
-                    <a href="{{ url('items/add') }}" class="btn btn-default">レシピ登録</a>
+                <div class="add-btn m-2">
+                    <a href="{{ url('items/add') }}" class="btn btn-primary">レシピ登録</a>
                 </div>
             </div> 
 
@@ -113,6 +113,32 @@
 </div>
 @stop
 @section('css')
+
+<style>
+.search-btn {
+    margin-left: 10px; /* デスクトップでは右寄りにせず横並び */
+}
+
+.add-btn {
+    margin-left: 10px; /* デスクトップでは右寄りにせず横並び */
+}
+
+
+/* 携帯サイズのとき */
+@media (max-width: 576px) {
+
+    .search-btn {
+        margin-left: auto; /* 右側に配置 */
+        margin-top: 10px; /* ボタン上部にスペースを追加 */
+    }
+
+    .add-btn {
+        margin-left: auto; /* 右側に配置 */
+        margin-top: 10px; /* ボタン上部にスペースを追加 */
+    }
+}
+</style>
+
 @stop
 
 @section('js')
