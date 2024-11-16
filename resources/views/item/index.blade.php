@@ -7,17 +7,16 @@
 @stop
 
 @section('content')
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
     <div class="row">
         <div class="card col-md-12">
-            <div class="card-header">
-                <!-- 一覧表示ボタン -->
+            <div class="card-header d-flex align-items-center justify-content-between">       
                 <div class="mr-3">
                     <a class="btn btn-outline-primary" href="{{ url('items') }}" role="button">一覧表示</a>
                 </div>
 
-                <!-- 検索バー -->               
-                <form action="{{ url('items') }}" method="post" class="d-flex align-items-center" >
+                <!-- 検索バー -->    
+                <form action="{{ url('items') }}" method="post" class="d-flex align-items-center flex-grow-1">
                     @csrf
                     <div class="mr-3">
                         <select class="form-control" aria-label="Default select example" name="type" style="width: 200px;">
@@ -30,19 +29,21 @@
                             <option value="6" @if( $type == '6') selected @endif >その他</option>
                         </select> 
                     </div>
+
                     <div class="mr-3">             
                         <input type="search" class="form-control" name="keyword" value="{{ $keyword }}" placeholder="検索キーワードを入力">
                     </div>
+
                     <div>
                         <button type="submit" class="btn btn-primary mr-3">検索</button>
                     </div>
                 </form>
 
                 <!-- レシピ登録ボタン --> 
-                <div class="ml-auto">
-                        <a href="{{ url('items/add') }}" class="btn btn-default">レシピ登録</a>
+                <div>
+                    <a href="{{ url('items/add') }}" class="btn btn-default">レシピ登録</a>
                 </div>
-            </div>
+            </div> 
 
             <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
@@ -99,9 +100,8 @@
                     </tbody>
                 </table>
             </div>
-        </div>     
+        </div>
     </div>
-</div>
     <!-- フッターここから -->
     <footer>
         <nav aria-label="Page navigation">
@@ -110,6 +110,7 @@
             </div>
         </nav>
         </footer> 
+<!-- </div> -->
 @stop
 @section('css')
 @stop
