@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<!-- <div class="container-fluid"> -->
+<div class="container-fluid">
     <div class="row">
         <div class="card col-md-12">
             <div class="card-header d-flex align-items-center justify-content-between">       
@@ -110,7 +110,7 @@
             </div>
         </nav>
         </footer> 
-<!-- </div> -->
+</div>
 @stop
 @section('css')
 @stop
