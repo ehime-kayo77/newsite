@@ -13,7 +13,7 @@
                     <img src="{{ asset('kayoimages/spring.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">春のレシピ－Spring Recipes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">ビタミンが豊富な春野菜や旬の食材で体調を整える<br>ーたけのこ、春キャベツ、新玉ねぎ、カツオ－</p>
                         <form action="items" method="post">
                             @csrf
                             <input type="submit" class="btn btn-sm btn-dark" value="レシピを見る">
@@ -26,7 +26,7 @@
                     <img src="{{ asset('kayoimages/summer.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">夏のレシピ－Summer Recipes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">夏野菜で夏を乗り切る。彩も鮮やかな夏野菜たち<br>ートマト、ナス、きゅうり、ピーマン－</p>
                         <form action="items" method="post">
                             @csrf
                             <input type="submit" class="btn btn-sm btn-dark" value="レシピを見る">
@@ -42,7 +42,7 @@
                     <img src="{{ asset('kayoimages/autumn.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">秋のレシピ－Autumn Recipes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">野菜、きのこ、芋、脂ののった魚など旬の食材が盛りだくさんの秋<br>ーかぼちゃ、きのこ、さんま、さば、サトイモ－</p>
                         <form action="items" method="post">
                             @csrf
                             <input type="submit" class="btn btn-sm btn-dark" value="レシピを見る">
@@ -57,7 +57,7 @@
                     <img src="{{ asset('kayoimages/winter.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">冬のレシピ－winter Recipes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">鍋や温かい食べ物で体を温める<br>ー大根、白菜、ほうれん草、ブロッコリー、ブリ－</p>
                         <form action="items" method="post">
                             @csrf
                             <input type="submit" class="btn btn-sm btn-dark" value="レシピを見る">
