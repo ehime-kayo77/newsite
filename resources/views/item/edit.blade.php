@@ -40,7 +40,7 @@
 
                         <div class="form-group">
                             <label for="type">カテゴリー</label>
-                                <select class="form-control" aria-label="Default select example" name="type" placeholder="種別" required>
+                                <select class="form-control" aria-label="Default select example" name="type" placeholder="カテゴリー" required>
                                         <option value="">カテゴリーを選択</option>
                                         <option value="1" {!! $item->type === 1 ? "selected" : "" !!} >主菜</option>
                                         <option value="2" {!! $item->type === 2 ? "selected" : "" !!} >副菜</option>

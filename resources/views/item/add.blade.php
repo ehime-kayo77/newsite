@@ -30,26 +30,26 @@
 
                         <div class="form-group">
                             <label for="type">カテゴリー</label>
-                                <select class="form-control" aria-label="Default select example" name="type" value="{{ old('type') }}" placeholder="カテゴリー" required>
-                                    <option value="">カテゴリーを選択</option>
-                                    <option value="1">主菜</option>
-                                    <option value="2">副菜</option>
-                                    <option value="3">汁物</option>
-                                    <option value="4">めん類</option>
-                                    <option value="5">スイーツ</option>
-                                    <option value="6">その他</option>
+                                <select class="form-control" aria-label="Default select example" name="type" value="{{ old('type') }}" placeholder="カテゴリーを選択" required>
+                                    <option disabled {!! old('type') === null ? "selected" : "" !!}>カテゴリーを選択</option>
+                                    <option value="1" {!! old('type') === 1 ? "selected" : "" !!}>主菜</option>
+                                    <option value="2" {!! old('type') === 2 ? "selected" : "" !!}>副菜</option>
+                                    <option value="3" {!! old('type') === 3 ? "selected" : "" !!}>汁物</option>
+                                    <option value="4" {!! old('type') === 4 ? "selected" : "" !!}>めん類</option>
+                                    <option value="5" {!! old('type') === 5 ? "selected" : "" !!}>スイーツ</option>
+                                    <option value="6" {!! old('type') === 6 ? "selected" : "" !!}>その他</option>
                                 </select> 
                         </div>
 
                         <div class="form-group">
                             <label for="type">おすすめの季節</label>
                                 <select class="form-control" aria-label="Default select example" name="season" value="{{ old('season') }}" placeholder="おすすめの季節" required>
-                                    <option value="">カテゴリーを選択</option>
-                                    <option value="1">春</option>
-                                    <option value="2">夏</option>
-                                    <option value="3">秋</option>
-                                    <option value="4">冬</option>
-                                    <option value="5">その他</option>
+                                    <option disabled {!! old('season') === null ? "selected" : "" !!}>おすすめの季節を選択</option>
+                                    <option value="1" {!! old('season') === 1 ? "selected" : "" !!}>春</option>
+                                    <option value="2" {!! old('season') === 2 ? "selected" : "" !!}>夏</option>
+                                    <option value="3" {!! old('season') === 3 ? "selected" : "" !!}>秋</option>
+                                    <option value="4" {!! old('season') === 4 ? "selected" : "" !!}>冬</option>
+                                    <option value="5" {!! old('season') === 5 ? "selected" : "" !!}>その他</option>
                                 </select> 
                         </div>
 
