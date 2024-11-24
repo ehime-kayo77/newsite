@@ -60,9 +60,12 @@ class ItemController extends Controller
             // バリデーション
             $this->validate($request, [
                 'name' => 'required|max:100',
-                'type' => 'nullable|integer',
-                'season' => 'nullable|integer',
-                'detail' => 'required|max:500',
+                'type' => 'required|integer',
+                'season' => 'required|integer',
+                'detail' => 'required|max:500|string',
+                'duration_in_minutes' => 'nullable|integer|max:500|min:0',
+                'cost_per_meal' => 'nullable|integer|max:500|min:0',
+                'link' => 'nullable|max:500|string',
             ]);
 
             // レシピ登録
@@ -102,6 +105,17 @@ class ItemController extends Controller
 
     public function update(Request $request,$id)
     {
+
+        
+        $this->validate($request, [
+            'name' => 'required|max:100',
+            'type' => 'required|integer',
+            'season' => 'required|integer',
+            'detail' => 'required|max:500|string',
+            'duration_in_minutes' => 'nullable|integer|max:500|min:0',
+            'cost_per_meal' => 'nullable|integer|max:500|min:0',
+            'link' => 'nullable|max:500|string',
+        ]);
 
         // アイテムの更新
         $item = Item::findOrFail($id);

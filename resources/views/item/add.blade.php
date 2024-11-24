@@ -25,12 +25,12 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">レシピ名</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="名前" required>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="レシピ名" required>
                         </div>
 
                         <div class="form-group">
                             <label for="type">カテゴリー</label>
-                                <select class="form-control" aria-label="Default select example" name="type" placeholder="種別" required>
+                                <select class="form-control" aria-label="Default select example" name="type" value="{{ old('type') }}" placeholder="カテゴリー" required>
                                     <option value="">カテゴリーを選択</option>
                                     <option value="1">主菜</option>
                                     <option value="2">副菜</option>
@@ -43,7 +43,7 @@
 
                         <div class="form-group">
                             <label for="type">おすすめの季節</label>
-                                <select class="form-control" aria-label="Default select example" name="season" required>
+                                <select class="form-control" aria-label="Default select example" name="season" value="{{ old('season') }}" placeholder="おすすめの季節" required>
                                     <option value="">カテゴリーを選択</option>
                                     <option value="1">春</option>
                                     <option value="2">夏</option>
@@ -55,22 +55,22 @@
 
                         <div class="form-group">
                             <label for="type">調理時間（分）</label>
-                            <input type="text" class="form-control" id="type" name="duration_in_minutes" placeholder="種別">
+                            <input type="text" class="form-control" id="type" name="duration_in_minutes" value="{{ old('duration_in_minutes') }}" placeholder="調理時間">
                         </div>
 
                         <div class="form-group">
                             <label for="type">費用（1人分）</label>
-                            <input type="text" class="form-control" id="type" name="cost_per_meal" placeholder="種別">
+                            <input type="text" class="form-control" id="type" name="cost_per_meal" value="{{ old('cost_per_meal') }}"placeholder="費用">
                         </div>
 
                         <div class="form-group">
                             <label for="detail">レシピ材料</label>
-                            <input type="text" class="form-control" id="detail" name="detail" value="{{ old('name') }}" placeholder="レシピ材料" required>
+                            <input type="text" class="form-control" id="detail" name="detail" value="{{ old('detail') }}" placeholder="レシピ材料" required>
                         </div>
 
                         <div class="form-group">
                             <label for="detail">movie</label>
-                            <input type="text" class="form-control" id="link" name="link" placeholder="作り方動画">
+                            <input type="text" class="form-control" id="link" name="link" value="{{ old('link') }}" placeholder="作り方動画">
                         </div>
                     </div>
 

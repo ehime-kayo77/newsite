@@ -35,19 +35,19 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">レシピ名</label>
-                            <input type="text" class="form-control" name="name" value="{{ $item-> name }}" required>
+                            <input type="text" class="form-control" name="name" value="{{ $item->name }}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="type">カテゴリー</label>
                                 <select class="form-control" aria-label="Default select example" name="type" placeholder="種別" required>
                                         <option value="">カテゴリーを選択</option>
-                                        <option value="1">主菜</option>
-                                        <option value="2">副菜</option>
-                                        <option value="3">汁物</option>
-                                        <option value="4">めん類</option>
-                                        <option value="5">スイーツ</option>
-                                        <option value="6">その他</option>
+                                        <option value="1" {!! $item->type === 1 ? "selected" : "" !!} >主菜</option>
+                                        <option value="2" {!! $item->type === 2 ? "selected" : "" !!} >副菜</option>
+                                        <option value="3" {!! $item->type === 3 ? "selected" : "" !!} >汁物</option>
+                                        <option value="4" {!! $item->type === 4 ? "selected" : "" !!} >めん類</option>
+                                        <option value="5" {!! $item->type === 5 ? "selected" : "" !!} >スイーツ</option>
+                                        <option value="6" {!! $item->type === 6 ? "selected" : "" !!} >その他</option>
                                 </select> 
                         </div>
 
@@ -55,11 +55,11 @@
                             <label for="type">おすすめの季節</label>
                                 <select class="form-control" aria-label="Default select example" name="season" required>
                                         <option value="">カテゴリーを選択</option>
-                                        <option value="1">春</option>
-                                        <option value="2">夏</option>
-                                        <option value="3">秋</option>
-                                        <option value="4">冬</option>
-                                        <option value="5">その他</option>
+                                        <option value="1" {!! $item->season === "春" ? "selected" : "" !!}>春</option>
+                                        <option value="2" {!! $item->season === "夏" ? "selected" : "" !!}>夏</option>
+                                        <option value="3" {!! $item->season === "秋" ? "selected" : "" !!}>秋</option>
+                                        <option value="4" {!! $item->season === "冬" ? "selected" : "" !!}>冬</option>
+                                        <option value="5" {!! $item->season === "その他" ? "selected" : "" !!}>その他</option>
                                 </select> 
                         </div>
 
