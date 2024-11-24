@@ -64,7 +64,7 @@ class ItemController extends Controller
                 'season' => 'required|integer',
                 'detail' => 'required|max:500|string',
                 'duration_in_minutes' => 'nullable|integer|max:500|min:0',
-                'cost_per_meal' => 'nullable|integer|max:500|min:0',
+                'cost_per_meal' => 'nullable|integer|max:5000|min:0',
                 'link' => 'nullable|max:500|string',
             ]);
 
@@ -106,14 +106,14 @@ class ItemController extends Controller
     public function update(Request $request,$id)
     {
 
-        
+        // バリデーション
         $this->validate($request, [
             'name' => 'required|max:100',
             'type' => 'required|integer',
             'season' => 'required|integer',
             'detail' => 'required|max:500|string',
             'duration_in_minutes' => 'nullable|integer|max:500|min:0',
-            'cost_per_meal' => 'nullable|integer|max:500|min:0',
+            'cost_per_meal' => 'nullable|integer|max:5000|min:0',
             'link' => 'nullable|max:500|string',
         ]);
 
